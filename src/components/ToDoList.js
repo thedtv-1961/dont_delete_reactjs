@@ -24,13 +24,24 @@ class ToDoList extends React.Component {
 		};
 	}
 
+	onItemClick(index) {
+		this.setState((state, props) => ({
+			todos: [
+				{
+					name: 'Breaskfast',
+					status: true,
+				},
+			],
+		}));
+	}
+
 	render() {
 		return (
 			<div>
 				<ToDoItem title="Test" />
 				<div>
 					<h3>List of Todo</h3>
-					{this.state.todos.map((item, index) => <ToDoObj key={index} todo={item} />)}
+					{this.state.todos.map((item, index) => <ToDoObj key={index} index={index} todo={item} onToDoItemClick={this.onItemClick} />)}
 				</div>
 			</div>
 		);
