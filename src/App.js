@@ -5,11 +5,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { initReactI18next } from 'react-i18next';
 import './App.css';
 import ToDoList from './components/ToDoList';
 import About from './components/About';
-import Test from './components/Test';
-import ReduxTest from './components/ReduxTest';
 
 function App() {
   return (
@@ -22,13 +21,7 @@ function App() {
                 <Link to="/">Home</Link>
               </td>
               <td>
-                <Link to="/test">Test</Link>
-              </td>
-              <td>
                 <Link to="/about">About</Link>
-              </td>
-              <td>
-                <Link to="/redux-test">Redux</Link>
               </td>
             </tr>
           </tbody>
@@ -40,12 +33,6 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
-          </Route>
-          <Route path="/test" exact>
-            <Test />
-          </Route>
-          <Route path="/redux-test" exact>
-            <ReduxTest />
           </Route>
         </Switch>
       </div>
